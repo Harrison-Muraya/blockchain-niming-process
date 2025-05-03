@@ -9,6 +9,7 @@ transaction = Transaction('harrison', 'muraya hh', 100, time())
 blockchain.pendingTranction.append(transaction)
 
 blockchain.mineTransaction()
+
 # block = Block(transaction, time() , 1)
 # blockchain.addBlock(block)
 

@@ -7,7 +7,7 @@ class Blockchain(object):
         # self.chain = []
         self.chain = [self.addGenesisBlock()]
         self.pendingTranction = []
-        self.difficulty = 2
+        self.difficulty = 1
         self.blockSize = 10
         self.minerReward =10
 
@@ -41,7 +41,7 @@ class Blockchain(object):
             print('Hash Attempt: ', self.hash)
             print('hash we want: ', hashPazzle, '----' )
             print('')
-            sleep(0.8)
+            sleep(0.08)
             print("")
         print(' Block mined ! nonse to prove of work: ', self.nonse)
         return True
@@ -97,7 +97,7 @@ class Block(object):
             print('Hash Attempt: ', self.hash)
             print('hash we want: ', hashPuzzle, '----' )
             print('')
-            sleep(0.8)
+            # sleep(0.8)
             print("")
 
             # print(len(hashPuzzle))
@@ -109,9 +109,10 @@ class Block(object):
         hashTransactions = ''
         for transaction in self.transactions:
             hashTransactions += transaction.hash
-        hashString = str(self.time) + hashTransactions + self.prev + str(self.height)
+        hashString = str(self.time) + hashTransactions + self.prev + str(self.height) + str(self.nonse)
         hashEncoded = json.dumps(hashString, sort_keys=True).encode()
         return hashlib.sha256(hashEncoded).hexdigest()
+    
 
 class Transaction(object):
     def __init__(self, sender, receiver, amt, time):
