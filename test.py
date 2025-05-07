@@ -5,6 +5,7 @@ import pprint
 pp = pprint.PrettyPrinter(indent = 4)
 
 blockchain = Blockchain()
+
 transaction = Transaction('harrison', 'muraya hh', 100, time())
 blockchain.pendingTranction.append(transaction)
 

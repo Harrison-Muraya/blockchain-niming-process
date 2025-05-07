@@ -27,24 +27,24 @@ class Blockchain(object):
             self.chain.append(newBlock)
         print('mining block transaction seccessiful')
     
-    def mineBlock(self, difficulty):
-        arr = []
-        for i in range (0, difficulty):
-            arr.append(1)
+    # def mineBlock(self, difficulty):
+    #     arr = []
+    #     for i in range (0, difficulty):
+    #         arr.append(1)
         
-        arrStr = map(str, arr)
-        hashPazzle = ''.join(arrStr)
-        while self.hash[0:difficulty] != hashPazzle:
-            self.nonse += 1
-            self.hash = self.calculateHash()
-            print('nonse: ', self.nonse)
-            print('Hash Attempt: ', self.hash)
-            print('hash we want: ', hashPazzle, '----' )
-            print('')
-            sleep(0.08)
-            print("")
-        print(' Block mined ! nonse to prove of work: ', self.nonse)
-        return True
+    #     arrStr = map(str, arr)
+    #     hashPazzle = ''.join(arrStr)
+    #     while self.hash[0:difficulty] != hashPazzle:
+    #         self.nonse += 1
+    #         self.hash = self.calculateHash()
+    #         print('nonse: ', self.nonse)
+    #         print('Hash Attempt: ', self.hash)
+    #         print('hash we want: ', hashPazzle, '----' )
+    #         print('')
+    #         sleep(0.08)
+    #         print("")
+    #     print(' Block mined ! nonse to prove of work: ', self.nonse)
+    #     return True
 
     def getLastBlock(self):
         return self.chain[-1]
